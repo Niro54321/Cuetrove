@@ -1,0 +1,11 @@
+# Cuetrove on Cloudflare Workers (free plan is enough). Deploy: npx wrangler deploy
+name = "cuetrove"
+main = "src/worker.js"
+compatibility_date = "2026-10-01"
+workers_dev = true
+
+# "My subtitles": files you upload from the settings page. Wrangler creates this namespace for you
+# on the first deploy. The first person to upload owns this Worker's storage; set MULTI_USER = "1"
+# under [vars] to let everyone with a link keep their own files here.
+[[kv_namespaces]]
+binding = "MINE"
